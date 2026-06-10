@@ -3,169 +3,288 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Học JavaScript Cơ Bản</title>
+<title>JavaScript Learning Hub</title>
 
 <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI,sans-serif;
+}
 
 body{
-    font-family: Arial, sans-serif;
-    margin:0;
-    background:#f4f4f4;
+    display:flex;
+    background:#f4f6f9;
 }
 
-header{
-    background:#f7df1e;
+.sidebar{
+    width:280px;
+    height:100vh;
+    background:#1e293b;
+    color:white;
+    position:fixed;
+    overflow-y:auto;
+}
+
+.sidebar h2{
     text-align:center;
-    padding:30px;
+    padding:20px;
+    background:#0f172a;
 }
 
-nav{
-    background:#222;
-    padding:15px;
-    text-align:center;
-}
-
-nav a{
+.sidebar a{
+    display:block;
     color:white;
     text-decoration:none;
-    margin:15px;
+    padding:15px 20px;
+    transition:0.3s;
+}
+
+.sidebar a:hover{
+    background:#334155;
+}
+
+.content{
+    margin-left:280px;
+    padding:30px;
+    width:100%;
 }
 
 section{
-    max-width:1000px;
-    margin:auto;
     background:white;
     padding:25px;
-    margin-top:20px;
-    border-radius:10px;
+    margin-bottom:25px;
+    border-radius:12px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+h1{
+    margin-bottom:20px;
 }
 
 h2{
-    color:#333;
+    color:#2563eb;
+    margin-bottom:15px;
 }
 
 .code{
-    background:#1e1e1e;
-    color:#00ff88;
+    background:#111827;
+    color:#22c55e;
     padding:15px;
-    border-radius:8px;
+    border-radius:10px;
     overflow:auto;
-}
-
-footer{
-    background:#222;
-    color:white;
-    text-align:center;
-    padding:20px;
-    margin-top:30px;
+    margin-top:10px;
 }
 
 button{
     padding:10px 20px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:8px;
     cursor:pointer;
 }
 
+button:hover{
+    background:#1d4ed8;
+}
+
+#output{
+    margin-top:15px;
+    font-weight:bold;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+}
 </style>
 </head>
 
 <body>
 
-<header>
-<h1>JavaScript Từ Cơ Bản Đến Nâng Cao</h1>
-<p>Website học JavaScript miễn phí</p>
-</header>
+<div class="sidebar">
+    <h2>JavaScript Hub</h2>
 
-<nav>
-<a href="#about">Giới thiệu</a>
-<a href="#basic">Cơ bản</a>
-<a href="#advanced">Nâng cao</a>
-<a href="#demo">Demo</a>
-</nav>
+    <a href="#intro">Giới thiệu</a>
+    <a href="#basic">Cơ bản</a>
+    <a href="#variable">Biến</a>
+    <a href="#condition">Điều kiện</a>
+    <a href="#loop">Vòng lặp</a>
+    <a href="#function">Hàm</a>
+    <a href="#array">Array</a>
+    <a href="#object">Object</a>
+    <a href="#dom">DOM</a>
+    <a href="#event">Event</a>
+    <a href="#async">Async/Await</a>
+    <a href="#project">Dự án</a>
+</div>
 
-<section id="about">
-<h2>JavaScript là gì?</h2>
+<div class="content">
+
+<section id="intro">
+<h1>Học JavaScript Từ Cơ Bản Đến Nâng Cao</h1>
 
 <p>
-JavaScript là ngôn ngữ lập trình giúp website trở nên tương tác.
-Nó được sử dụng bởi hàng triệu website trên toàn thế giới.
+JavaScript là ngôn ngữ lập trình phổ biến nhất cho phát triển web.
+Nó giúp website trở nên động, tương tác và mạnh mẽ.
 </p>
 
 </section>
 
 <section id="basic">
+<h2>JavaScript là gì?</h2>
 
-<h2>Kiến thức cơ bản</h2>
+<p>
+JavaScript được tạo ra năm 1995 bởi Brendan Eich.
+Ngày nay JavaScript được sử dụng trong Front-End, Back-End,
+Game Development và nhiều lĩnh vực khác.
+</p>
 
-<h3>Khai báo biến</h3>
+</section>
+
+<section id="variable">
+<h2>Biến</h2>
 
 <div class="code">
 let name = "Đại";
+
 const age = 20;
+
+console.log(name);
 </div>
 
-<h3>Điều kiện</h3>
+</section>
+
+<section id="condition">
+<h2>Câu lệnh điều kiện</h2>
 
 <div class="code">
+let age = 20;
+
 if(age >= 18){
- console.log("Người lớn");
+   console.log("Người lớn");
 }
 </div>
 
 </section>
 
-<section id="advanced">
-
-<h2>JavaScript Nâng Cao</h2>
-
-<h3>Promise</h3>
+<section id="loop">
+<h2>Vòng lặp For</h2>
 
 <div class="code">
-const promise = new Promise(
-(resolve,reject)=>{
- resolve("Thành công");
-});
+for(let i=0;i<5;i++){
+    console.log(i);
+}
 </div>
 
-<h3>Async Await</h3>
+</section>
+
+<section id="function">
+<h2>Function</h2>
+
+<div class="code">
+function add(a,b){
+    return a+b;
+}
+</div>
+
+</section>
+
+<section id="array">
+<h2>Array</h2>
+
+<div class="code">
+let fruits = [
+ "Táo",
+ "Cam",
+ "Xoài"
+];
+</div>
+
+</section>
+
+<section id="object">
+<h2>Object</h2>
+
+<div class="code">
+let user = {
+ name:"Đại",
+ age:20
+};
+</div>
+
+</section>
+
+<section id="dom">
+<h2>DOM</h2>
+
+<div class="code">
+document.getElementById("demo")
+.innerHTML = "Hello";
+</div>
+
+</section>
+
+<section id="event">
+<h2>Event</h2>
+
+<button onclick="helloJS()">
+Chạy Demo JavaScript
+</button>
+
+<p id="output"></p>
+
+</section>
+
+<section id="async">
+<h2>Async / Await</h2>
 
 <div class="code">
 async function getData(){
- let data = await fetch(url);
+
+ let response =
+ await fetch(url);
+
+ let data =
+ await response.json();
+
 }
 </div>
 
 </section>
 
-<section id="demo">
+<section id="project">
+<h2>Dự án thực hành</h2>
 
-<h2>Demo JavaScript</h2>
-
-<p>Bấm nút để chạy JavaScript:</p>
-
-<button onclick="showMessage()">
-Chạy Demo
-</button>
-
-<p id="result"></p>
+<ul>
+<li>Máy tính Calculator</li>
+<li>To-Do List</li>
+<li>Weather App</li>
+<li>Quiz App</li>
+<li>Game Đoán Số</li>
+</ul>
 
 </section>
 
 <footer>
 
 <p>
-© 2026 Học JavaScript cùng Đại
+© 2026 JavaScript Learning Hub
 </p>
 
 </footer>
 
+</div>
+
 <script>
 
-function showMessage(){
+function helloJS(){
 
-document.getElementById("result")
+document.getElementById("output")
 .innerHTML =
-"Xin chào! Đây là JavaScript đang hoạt động.";
+"JavaScript đang hoạt động thành công!";
 
 }
 
