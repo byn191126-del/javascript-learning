@@ -1,1 +1,175 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Học JavaScript Cơ Bản</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background:#f4f4f4;
+}
+
+header{
+    background:#f7df1e;
+    text-align:center;
+    padding:30px;
+}
+
+nav{
+    background:#222;
+    padding:15px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:15px;
+}
+
+section{
+    max-width:1000px;
+    margin:auto;
+    background:white;
+    padding:25px;
+    margin-top:20px;
+    border-radius:10px;
+}
+
+h2{
+    color:#333;
+}
+
+.code{
+    background:#1e1e1e;
+    color:#00ff88;
+    padding:15px;
+    border-radius:8px;
+    overflow:auto;
+}
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+}
+
+button{
+    padding:10px 20px;
+    cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>JavaScript Từ Cơ Bản Đến Nâng Cao</h1>
+<p>Website học JavaScript miễn phí</p>
+</header>
+
+<nav>
+<a href="#about">Giới thiệu</a>
+<a href="#basic">Cơ bản</a>
+<a href="#advanced">Nâng cao</a>
+<a href="#demo">Demo</a>
+</nav>
+
+<section id="about">
+<h2>JavaScript là gì?</h2>
+
+<p>
+JavaScript là ngôn ngữ lập trình giúp website trở nên tương tác.
+Nó được sử dụng bởi hàng triệu website trên toàn thế giới.
+</p>
+
+</section>
+
+<section id="basic">
+
+<h2>Kiến thức cơ bản</h2>
+
+<h3>Khai báo biến</h3>
+
+<div class="code">
+let name = "Đại";
+const age = 20;
+</div>
+
+<h3>Điều kiện</h3>
+
+<div class="code">
+if(age >= 18){
+ console.log("Người lớn");
+}
+</div>
+
+</section>
+
+<section id="advanced">
+
+<h2>JavaScript Nâng Cao</h2>
+
+<h3>Promise</h3>
+
+<div class="code">
+const promise = new Promise(
+(resolve,reject)=>{
+ resolve("Thành công");
+});
+</div>
+
+<h3>Async Await</h3>
+
+<div class="code">
+async function getData(){
+ let data = await fetch(url);
+}
+</div>
+
+</section>
+
+<section id="demo">
+
+<h2>Demo JavaScript</h2>
+
+<p>Bấm nút để chạy JavaScript:</p>
+
+<button onclick="showMessage()">
+Chạy Demo
+</button>
+
+<p id="result"></p>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 Học JavaScript cùng Đại
+</p>
+
+</footer>
+
+<script>
+
+function showMessage(){
+
+document.getElementById("result")
+.innerHTML =
+"Xin chào! Đây là JavaScript đang hoạt động.";
+
+}
+
+</script>
+
+</body>
+</html>
