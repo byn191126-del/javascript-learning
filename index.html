@@ -3,103 +3,198 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tìm Hiểu JavaScript</title>
+<title>JavaScript Documentation</title>
 
 <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    line-height:1.8;
-    background:#f5f5f5;
-    color:#333;
+    font-family:Segoe UI, Arial, sans-serif;
+    display:flex;
+    background:#f4f6f9;
+    height:100vh;
 }
 
-header{
-    background:#f7df1e;
-    text-align:center;
-    padding:50px 20px;
-}
-
-header h1{
-    margin:0;
-    font-size:3em;
-}
-
-nav{
-    background:#222;
-    padding:15px;
-    text-align:center;
-    position:sticky;
-    top:0;
-}
-
-nav a{
+.sidebar{
+    width:280px;
+    background:#1e293b;
     color:white;
-    text-decoration:none;
-    margin:0 15px;
+    overflow-y:auto;
+    padding:20px 0;
 }
 
-main{
-    max-width:1100px;
-    margin:auto;
-    padding:20px;
+.logo{
+    text-align:center;
+    font-size:24px;
+    font-weight:bold;
+    margin-bottom:20px;
+    color:#f7df1e;
 }
 
-section{
+.menu-item{
+    padding:15px 25px;
+    cursor:pointer;
+    transition:0.3s;
+    border-left:4px solid transparent;
+}
+
+.menu-item:hover{
+    background:#334155;
+}
+
+.menu-item.active{
+    background:#334155;
+    border-left:4px solid #f7df1e;
+}
+
+.content{
+    flex:1;
+    padding:40px;
+    overflow-y:auto;
+}
+
+.card{
     background:white;
-    padding:25px;
-    margin:20px 0;
-    border-radius:10px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
 }
 
-h2{
-    color:#d4a100;
+.card h1{
+    color:#1e293b;
+    margin-bottom:20px;
+}
+
+.card p{
+    line-height:1.8;
+    margin-bottom:15px;
 }
 
 .code{
-    background:#1e1e1e;
-    color:#00ff88;
+    background:#0f172a;
+    color:#22c55e;
     padding:15px;
-    border-radius:8px;
+    border-radius:10px;
+    margin-top:15px;
     overflow:auto;
+    font-family:Consolas;
 }
 
-footer{
-    text-align:center;
-    background:#222;
-    color:white;
-    padding:20px;
+ul{
+    margin-left:20px;
+    line-height:2;
 }
 </style>
 </head>
 <body>
 
-<header>
-    <h1>JavaScript</h1>
-    <p>Ngôn ngữ lập trình phổ biến nhất thế giới Web</p>
-</header>
+<div class="sidebar">
 
-<nav>
-    <a href="#gioithieu">Giới thiệu</a>
-    <a href="#lichsu">Lịch sử</a>
-    <a href="#hoatdong">Cách hoạt động</a>
-    <a href="#ungdung">Ứng dụng</a>
-    <a href="#tuonglai">Tương lai</a>
-</nav>
+<div class="logo">
+JavaScript
+</div>
 
-<main>
+<div class="menu-item active" onclick="showPage('intro', this)">
+JavaScript là gì?
+</div>
 
-<section id="gioithieu">
-<h2>JavaScript là gì?</h2>
+<div class="menu-item" onclick="showPage('history', this)">
+Lịch sử phát triển
+</div>
+
+<div class="menu-item" onclick="showPage('work', this)">
+Cách hoạt động
+</div>
+
+<div class="menu-item" onclick="showPage('features', this)">
+Tính năng nổi bật
+</div>
+
+<div class="menu-item" onclick="showPage('uses', this)">
+Ứng dụng thực tế
+</div>
+
+<div class="menu-item" onclick="showPage('future', this)">
+Tương lai JavaScript
+</div>
+
+</div>
+
+<div class="content">
+
+<div class="card" id="content-area">
+
+<h1>JavaScript là gì?</h1>
 
 <p>
-JavaScript là ngôn ngữ lập trình được sử dụng để tạo ra các trang web động và tương tác.
-Hầu hết mọi website hiện đại đều sử dụng JavaScript.
+JavaScript là ngôn ngữ lập trình được sử dụng để tạo các trang web động và tương tác.
+Nó là một trong ba công nghệ cốt lõi của World Wide Web cùng với HTML và CSS.
 </p>
 
 <p>
-JavaScript thường kết hợp với HTML và CSS:
+Ngày nay JavaScript được sử dụng trong:
+</p>
+
+<ul>
+<li>Website</li>
+<li>Ứng dụng web</li>
+<li>Máy chủ</li>
+<li>Game</li>
+<li>Ứng dụng di động</li>
+</ul>
+
+</div>
+
+</div>
+
+<script>
+
+const pages = {
+
+intro: `
+<h1>JavaScript là gì?</h1>
+
+<p>
+JavaScript là ngôn ngữ lập trình phổ biến nhất dành cho phát triển web.
+</p>
+
+<p>
+JavaScript giúp website trở nên sống động thông qua các chức năng như:
+</p>
+
+<ul>
+<li>Xử lý nút bấm</li>
+<li>Hiển thị dữ liệu</li>
+<li>Tạo hiệu ứng</li>
+<li>Gửi dữ liệu đến máy chủ</li>
+</ul>
+`,
+
+history: `
+<h1>Lịch sử phát triển</h1>
+
+<p>
+JavaScript được Brendan Eich tạo ra năm 1995.
+</p>
+
+<p>
+Ban đầu ngôn ngữ này được phát triển cho trình duyệt Netscape Navigator.
+</p>
+
+<p>
+Chỉ sau vài năm JavaScript đã trở thành tiêu chuẩn của web hiện đại.
+</p>
+`,
+
+work: `
+<h1>Cách JavaScript hoạt động</h1>
+
+<p>
+Khi người dùng mở website:
 </p>
 
 <ul>
@@ -108,98 +203,66 @@ JavaScript thường kết hợp với HTML và CSS:
 <li>JavaScript tạo chức năng</li>
 </ul>
 
-</section>
-
-<section id="lichsu">
-<h2>Lịch sử phát triển</h2>
-
-<p>
-JavaScript được tạo ra năm 1995 bởi Brendan Eich chỉ trong khoảng 10 ngày.
-Ban đầu nó được phát triển cho trình duyệt Netscape Navigator.
-</p>
-
-<p>
-Ngày nay JavaScript đã trở thành một trong những ngôn ngữ lập trình phổ biến nhất thế giới.
-</p>
-
-</section>
-
-<section id="hoatdong">
-<h2>JavaScript hoạt động như thế nào?</h2>
-
-<p>
-Khi người dùng mở một website, trình duyệt sẽ tải HTML, CSS và JavaScript.
-JavaScript được thực thi để xử lý các thao tác như:
-</p>
-
-<ul>
-<li>Bấm nút</li>
-<li>Đăng nhập</li>
-<li>Hiển thị dữ liệu</li>
-<li>Gửi yêu cầu đến máy chủ</li>
-<li>Tạo hiệu ứng động</li>
-</ul>
-
 <div class="code">
 document.getElementById("demo")
 .innerHTML = "Xin chào!";
 </div>
+`,
 
-</section>
-
-<section id="ungdung">
-<h2>Ứng dụng thực tế</h2>
-
-<p>
-JavaScript được sử dụng trong:
-</p>
+features: `
+<h1>Tính năng nổi bật</h1>
 
 <ul>
-<li>Website thương mại điện tử</li>
+<li>Dễ học</li>
+<li>Chạy trực tiếp trên trình duyệt</li>
+<li>Hỗ trợ lập trình hướng đối tượng</li>
+<li>Hỗ trợ bất đồng bộ</li>
+<li>Cộng đồng lớn</li>
+</ul>
+`,
+
+uses: `
+<h1>Ứng dụng thực tế</h1>
+
+<ul>
 <li>Mạng xã hội</li>
-<li>Ứng dụng web</li>
+<li>Website thương mại điện tử</li>
 <li>Game trình duyệt</li>
+<li>Ứng dụng quản lý doanh nghiệp</li>
 <li>Ứng dụng điện thoại</li>
-<li>Máy chủ với Node.js</li>
 </ul>
+`,
 
-</section>
-
-<section>
-<h2>Những khái niệm quan trọng</h2>
-
-<ul>
-<li>Biến (Variables)</li>
-<li>Kiểu dữ liệu (Data Types)</li>
-<li>Hàm (Functions)</li>
-<li>Mảng (Arrays)</li>
-<li>Đối tượng (Objects)</li>
-<li>DOM</li>
-<li>Events</li>
-<li>Promise</li>
-<li>Async/Await</li>
-</ul>
-
-</section>
-
-<section id="tuonglai">
-<h2>Tương lai của JavaScript</h2>
+future: `
+<h1>Tương lai JavaScript</h1>
 
 <p>
-JavaScript tiếp tục phát triển mạnh mẽ với các công nghệ hiện đại như React, Vue, Angular và Node.js.
+JavaScript vẫn là một trong những ngôn ngữ quan trọng nhất của ngành phần mềm.
 </p>
 
 <p>
-Đây vẫn là một trong những ngôn ngữ quan trọng nhất đối với ngành phát triển phần mềm.
+Các công nghệ như React, Vue, Node.js tiếp tục thúc đẩy sự phát triển của JavaScript.
 </p>
 
-</section>
+<p>
+Nhu cầu tuyển dụng lập trình viên JavaScript vẫn rất cao trên toàn thế giới.
+</p>
+`
 
-</main>
+};
 
-<footer>
-<p>© 2026 - Website tìm hiểu về JavaScript</p>
-</footer>
+function showPage(page, element){
+
+document.getElementById("content-area").innerHTML =
+pages[page];
+
+document.querySelectorAll(".menu-item")
+.forEach(item => item.classList.remove("active"));
+
+element.classList.add("active");
+}
+
+</script>
 
 </body>
 </html>
